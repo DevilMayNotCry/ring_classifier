@@ -5,7 +5,7 @@ from tensorflow.keras.models import Sequential
 from utils import img_width, img_height, data_augmentation
 
 
-ring_style = Sequential([
+model_material_2 = Sequential([
     data_augmentation,
     layers.Rescaling(1./255),
     layers.Conv2D(16, 5, padding='same', activation='relu'),
