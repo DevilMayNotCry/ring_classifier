@@ -27,7 +27,7 @@ model_material_2 = Sequential([
     layers.Dropout(0.5),
     layers.Dense(256, activation='relu'),
     layers.Dense(256, activation='relu'),
-    layers.Dense(6, activation='softmax')
+    layers.Dense(9, activation='softmax')
 ])
 
 ring_style = Sequential([
