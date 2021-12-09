@@ -15,7 +15,7 @@ data_augmentation = keras.Sequential(
   ]
 )
 
-data_augmentation = keras.Sequential(
+shape_augmentation = keras.Sequential(
   [
     layers.RandomFlip("horizontal",
                       input_shape=(512,
