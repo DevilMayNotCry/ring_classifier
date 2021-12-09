@@ -80,6 +80,32 @@ model_style = Sequential([
     layers.Dense(10, activation='softmax')
 ])
 
+model_stone_shape = Sequential([
+    data_augmentation,
+    layers.Rescaling(1./255),
+    layers.Conv2D(16, 5, padding='same', activation='relu'),
+    layers.MaxPooling2D(),
+    layers.Conv2D(32, 5, padding='same', activation='relu'),
+    layers.MaxPooling2D(),
+    layers.Conv2D(32, 5, padding='same', activation='relu'),
+    layers.MaxPooling2D(),
+    layers.Conv2D(32, 5, padding='same', activation='relu'),
+    layers.MaxPooling2D(),
+    layers.Conv2D(64, 5, padding='same', activation='relu'),
+    layers.MaxPooling2D(),
+    layers.Conv2D(64, 5, padding='same', activation='relu'),
+    layers.MaxPooling2D(),
+    layers.Conv2D(64, 5, padding='same', activation='relu'),
+    layers.MaxPooling2D(),
+    layers.Conv2D(64, 5, padding='same', activation='relu'),
+    layers.MaxPooling2D(),
+
+    layers.Flatten(),
+    layers.Dropout(0.3),
+    layers.Dense(256, activation='relu'),
+    layers.Dense(256, activation='relu'),
+    layers.Dense(8, activation='softmax')
+])
 
 model_metal = Sequential([
     data_augmentation,
