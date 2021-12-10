@@ -4,6 +4,34 @@ from tensorflow.keras import layers
 from tensorflow.keras.models import Sequential
 from utils import img_width, img_height, data_augmentation, shape_augmentation
 
+model_material_new = Sequential([
+    shape_augmentation,
+    layers.Rescaling(1./255),
+    layers.Conv2D(16, 5, padding='same', activation='relu'),
+    layers.MaxPooling2D(),
+    layers.Conv2D(32, 5, padding='same', activation='relu'),
+    layers.MaxPooling2D(),
+    layers.Conv2D(32, 5, padding='same', activation='relu'),
+    layers.MaxPooling2D(),
+    layers.Conv2D(32, 5, padding='same', activation='relu'),
+    layers.MaxPooling2D(),
+    layers.Conv2D(64, 5, padding='same', activation='relu'),
+    layers.MaxPooling2D(),
+    layers.Conv2D(64, 5, padding='same', activation='relu'),
+    layers.MaxPooling2D(),
+    layers.Conv2D(64, 5, padding='same', activation='relu'),
+    layers.MaxPooling2D(),
+    layers.Conv2D(64, 5, padding='same', activation='relu'),
+    layers.MaxPooling2D(),
+    layers.Conv2D(64, 5, padding='same', activation='relu'),
+    layers.MaxPooling2D(),
+
+    layers.Flatten(),
+    layers.Dropout(0.5),
+    layers.Dense(256, activation='relu'),
+    layers.Dense(256, activation='relu'),
+    layers.Dense(9, activation='softmax')
+])
 
 model_material_2 = Sequential([
     data_augmentation,
