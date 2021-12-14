@@ -41,43 +41,43 @@ model_style_bigger = Sequential([
     layers.BatchNormalization(),
     layers.Conv2D(16, 5, strides=2, padding='same', activation='relu'),
     layers.BatchNormalization(),
-    layers.Dropout(0.2)
+    layers.Dropout(0.2),
      
     layers.Conv2D(32, 5, padding='same', activation='relu'),
     layers.BatchNormalization(),
     layers.Conv2D(32, 5, strides=2, padding='same', activation='relu'),
     layers.BatchNormalization(),
-    layers.Dropout(0.2)
+    layers.Dropout(0.2),
 
     layers.Conv2D(32, 5, padding='same', activation='relu'),
     layers.BatchNormalization(),
     layers.Conv2D(32, 5, strides=2, padding='same', activation='relu'),
     layers.BatchNormalization(),
-    layers.Dropout(0.2)
+    layers.Dropout(0.2),
 
     layers.Conv2D(32, 5, padding='same', activation='relu'),
     layers.BatchNormalization(),
     layers.Conv2D(64, 5, strides=2, padding='same', activation='relu'),
     layers.BatchNormalization(),
-    layers.Dropout(0.4)
+    layers.Dropout(0.4),
 
     layers.Conv2D(64, 5, padding='same', activation='relu'),
     layers.BatchNormalization(),
     layers.Conv2D(64, 5, strides=2, padding='same', activation='relu'),
     layers.BatchNormalization(),
-    layers.Dropout(0.4)
+    layers.Dropout(0.4),
 
     layers.Conv2D(64, 5, padding='same', activation='relu'),
     layers.BatchNormalization(),
     layers.Conv2D(64, 5, strides=2, padding='same', activation='relu'),
     layers.BatchNormalization(),
-    layers.Dropout(0.4)
+    layers.Dropout(0.4),
 
     layers.Conv2D(64, 5, padding='same', activation='relu'),
     layers.BatchNormalization(),
     layers.Conv2D(64, 5, strides=2, padding='same', activation='relu'),
     layers.BatchNormalization(),
-    layers.Dropout(0.4)
+    layers.Dropout(0.4),
 
     layers.Flatten(),
     layers.Dense(256, activation='relu'),
