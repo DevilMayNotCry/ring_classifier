@@ -4,6 +4,61 @@ from tensorflow.keras import layers
 from tensorflow.keras.models import Sequential
 from utils import img_width, img_height, data_augmentation, shape_augmentation
 
+model_ring_material = Sequential([
+    shape_augmentation,
+    layers.Rescaling(1./255),
+    layers.Conv2D(16, 5, padding='same', activation='relu'),
+    layers.MaxPooling2D(),
+    layers.Conv2D(32, 5, padding='same', activation='relu'),
+    layers.MaxPooling2D(),
+    layers.Conv2D(32, 5, padding='same', activation='relu'),
+    layers.MaxPooling2D(),
+    layers.Conv2D(32, 5, padding='same', activation='relu'),
+    layers.MaxPooling2D(),
+    layers.Conv2D(64, 5, padding='same', activation='relu'),
+    layers.MaxPooling2D(),
+    layers.Conv2D(64, 5, padding='same', activation='relu'),
+    layers.MaxPooling2D(),
+    layers.Conv2D(64, 5, padding='same', activation='relu'),
+    layers.MaxPooling2D(),
+    layers.Conv2D(64, 5, padding='same', activation='relu'),
+    layers.MaxPooling2D(),
+    layers.Conv2D(128, 5, padding='same', activation='relu'),
+    layers.MaxPooling2D(),
+
+    layers.Flatten(),
+    layers.Dropout(0.4),
+    layers.Dense(256, activation='relu'),
+    layers.Dense(256, activation='relu'),
+    layers.Dense(4, activation='softmax')
+])
+
+model_stone_new = Sequential([
+    data_augmentation,
+    layers.Rescaling(1./255),
+    layers.Conv2D(16, 5, padding='same', activation='relu'),
+    layers.MaxPooling2D(),
+    layers.Conv2D(32, 5, padding='same', activation='relu'),
+    layers.MaxPooling2D(),
+    layers.Conv2D(32, 5, padding='same', activation='relu'),
+    layers.MaxPooling2D(),
+    layers.Conv2D(32, 5, padding='same', activation='relu'),
+    layers.MaxPooling2D(),
+    layers.Conv2D(64, 5, padding='same', activation='relu'),
+    layers.MaxPooling2D(),
+    layers.Conv2D(64, 5, padding='same', activation='relu'),
+    layers.MaxPooling2D(),
+    layers.Conv2D(64, 5, padding='same', activation='relu'),
+    layers.MaxPooling2D(),
+    layers.Conv2D(128, 5, padding='same', activation='relu'),
+    layers.MaxPooling2D(),
+    layers.Flatten(),
+    layers.Dropout(0.4),
+    layers.Dense(256, activation='relu'),
+    layers.Dense(128, activation='relu'),
+    layers.Dense(9, activation='softmax')
+])
+
 model_material_new = Sequential([
     shape_augmentation,
     layers.Rescaling(1./255),
